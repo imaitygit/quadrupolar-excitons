@@ -2,8 +2,7 @@
 
 ## Repository Structure
 
-- [`code/`](./code/)— contains the source code used for generating exciton phase diagram. 
-- [`data/`](./data/) — contains the data used to generate Figures 1–3 of the paper.
+- [`Fig4/`](./Fig4/) — contains the data and code used to generate Figures 4 of the paper.
 
 ## Citation
 
