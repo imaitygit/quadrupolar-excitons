@@ -2,6 +2,9 @@
 
 ## Repository Structure
 
+- [`Fig1/`](./Fig1/) — contains the data and code used to generate Figures 4 of the paper.
+- [`Fig2/`](./Fig2/) — contains the data and code used to generate Figures 4 of the paper.
+- [`Fig3/`](./Fig3/) — contains the data and code used to generate Figures 4 of the paper.
 - [`Fig4/`](./Fig4/) — contains the data and code used to generate Figures 4 of the paper.
 
 ## Citation
