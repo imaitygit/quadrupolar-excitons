@@ -203,9 +203,14 @@ def build_phase_diagram(p, nd2v, Rax):
     print("  Done.")
 
     # Per exciton, in units of e²/κd, so they compare with R and Ṽ_M (Eq. 6 of the paper):
-    #   ½: Σ over the partners of one site counts every pair twice;  /es: eV → e²/κd
+    # Note: Not entirely sure why Slobodkin et al., did not do 1/2. That seemed more sensible
+    # to me. However, I am attempting to reproduce their results as closely as possible.
+    # So, that V_M =0 and V_M non-zero remains robust. Factoring in this does not 
+    # change our conclusions. 
+    # Note to self: Verified all conclusions are intact. 
     es = p.energy_scale
-    Eq, Ed_sq, Ed_tri = 0.5*Eq/es, 0.5*Ed_sq/es, 0.5*Ed_tri/es
+    # Eq, Ed_sq, Ed_tri = 0.5*Eq/es, 0.5*Ed_sq/es, 0.5*Ed_tri/es
+    Eq, Ed_sq, Ed_tri = Eq/es, Ed_sq/es, Ed_tri/es
 
     # Droplet construction: floor each dipolar branch at its energy minimum
     idx_sq  = np.argmin(Ed_sq);  Emin_sq  = Ed_sq[idx_sq];  nd2d_sq  = nd2v[idx_sq]
@@ -397,7 +402,7 @@ if __name__ == '__main__':
         d            = 0.61,   # nm
         kappa        = 4.0,
         Delta_DQ     = 12.0,   # meV
-        Delta_DQ_max = 20.0,   # meV (sets R_max)
-        V_moire      = 0.0,   # meV — penalises D□ (paper Fig. 5e: 20; Fig. 5a: 0)
+        Delta_DQ_max = 50.0,   # meV (sets R_max)
+        V_moire      = 25.0,   # meV — penalises D□
     )
     run(paper)
