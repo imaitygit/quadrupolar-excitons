@@ -346,9 +346,8 @@ def run(p=None, points=None):
     #ax.set_ylabel(r'$R = \dfrac{(\mathcal{E}^{+}_{q} - \mathcal{E}^{-}_{q})\, 4\pi\epsilon_0 \epsilon_{\mathrm{eff}} d}{2e^2}$', fontsize=fs)
     ax.set_xlim(nd2v[0], nd2_max)
     ax.set_ylim(Rax[0], Rax[-1])
-    ax.set_yticks([0.01, 0.02, 0.03])
-    #ax.set_yticklabels(['0.01', '0.02', '0.03'], fontsize=fs)
-    ax.set_yticklabels([])
+    ax.set_yticks([0.02, 0.04])
+    ax.set_yticklabels(['0.02', '0.04'], fontsize=fs)
     ax.set_xticks([0.05, 0.1, 0.15])
     ax.set_xticklabels(['0.05', '0.1', '0.15'], fontsize=fs)
 
@@ -402,7 +401,7 @@ if __name__ == '__main__':
         d            = 0.61,   # nm
         kappa        = 4.0,
         Delta_DQ     = 12.0,   # meV
-        Delta_DQ_max = 50.0,   # meV (sets R_max)
-        V_moire      = 0.0,   # meV — penalises D□
+        Delta_DQ_max = 40.0,   # meV (sets R_max)
+        V_moire      = 30.0,   # meV — penalises D□
     )
     run(paper)
