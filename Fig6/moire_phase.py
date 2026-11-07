@@ -403,6 +403,6 @@ if __name__ == '__main__':
         kappa        = 4.0,
         Delta_DQ     = 12.0,   # meV
         Delta_DQ_max = 50.0,   # meV (sets R_max)
-        V_moire      = 25.0,   # meV — penalises D□
+        V_moire      = 0.0,   # meV — penalises D□
     )
     run(paper)
